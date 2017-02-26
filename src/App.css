@@ -1,0 +1,66 @@
+html, body {
+  height: 100%;
+}
+CardText {
+  color: #F3E8D2;
+}
+.App {
+  text-align: center;
+  min-height: 100%;
+  position: relative;
+}
+
+.App-logo {
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 120%;
+}
+
+.App-header {
+  /*background-color: #222;*/
+  background-color: #154500;
+  height: 80px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: normal;
+}
+
+.MenuAlign {
+  float: right;
+  width: 70%;
+  padding-top: 3%;
+}
+
+.Menu {
+  display: flex !important;
+}
+
+.SocialBar {
+  background-color: #53ff00;
+  height: 30px;
+  width: 100vw;
+  padding-left: 12%;
+  text-align: left;
+}
+.SocialIcon {
+  padding: 0.5%;
+}
+.Footer {
+  display: flex;
+  width: 100vw;
+  background-color: #154500;
+  position: fixed;
+  bottom: 0;
+}
+
+.FooterCard {
+  width: 25%;
+  background-color: #154500 !important;
+  padding: 1%;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
