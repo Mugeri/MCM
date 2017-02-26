@@ -18,7 +18,7 @@ const mcmTheme = getMuiTheme({
     textColor: '#ffef00',
     alternateTextColor: '#fff',
     secondaryTextColor: '#757575',
-    canvasColor: '#fff',
+    canvasColor: '#53ff00',
     disabledColor: '#F3E8D2',
     borderColor: '#BDBDBD',
   },
