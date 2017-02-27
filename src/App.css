@@ -12,7 +12,8 @@ CardText {
 
 .App-logo {
   /*animation: App-logo-spin infinite 20s linear;*/
-  height: 120%;
+  height: 160%;
+  margin-top: -1%;
 }
 
 .App-header {
@@ -30,11 +31,13 @@ CardText {
 .MenuAlign {
   float: right;
   width: 70%;
-  padding-top: 3%;
+  padding-top: 1%;
 }
 
 .Menu {
   display: flex !important;
+  width: 70% !important;
+  justify-content: space-around;
 }
 
 .SocialBar {
@@ -51,7 +54,7 @@ CardText {
   display: flex;
   width: 100vw;
   background-color: #154500;
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0;
 }
 
