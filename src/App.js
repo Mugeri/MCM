@@ -2,7 +2,6 @@ import React from 'react';
 import { MuiThemeProvider, getMuiTheme } from 'material-ui/styles';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './components/Home';
 import './App.css';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
@@ -29,13 +28,13 @@ const App = props => (
   <MuiThemeProvider muiTheme={getMuiTheme(mcmTheme)}>
     <div className="App">
       <Header />
-        <Home />
+        {props.children}
       <Footer />
     </div>
   </MuiThemeProvider>
 );
 
-// App.propTypes = {
-//   children: React.PropTypes.node,
-// };
+App.propTypes = {
+  children: React.PropTypes.node,
+};
 export default App;
