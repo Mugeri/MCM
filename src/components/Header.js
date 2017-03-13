@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import logo_6 from '../images/logo_6.png';
 import facebook from '../images/facebook-16.ico';
 import twitter from '../images/twitter-16.ico';
@@ -36,11 +37,11 @@ export default class Header extends React.Component {
             <Menu className="Menu"
               style={{padding: "0px 10px"}}
             >
-              <MenuItem primaryText="Home" value='home' disabled={this.state.menu.home} />
-              <MenuItem primaryText="About" value='about' disabled={this.state.menu.about} />
-              <MenuItem primaryText="Marathon" value='marathon' disabled={this.state.menu.marathon} />
-              <MenuItem primaryText="Gallery" value='gallery' disabled={this.state.menu.gallery} />
-              <MenuItem primaryText="Contact" value='contact' disabled={this.state.menu.contact}/>
+              <MenuItem primaryText="Home" containerElement={<Link to="/" />} value='home' disabled={this.state.menu.home} />
+              <MenuItem primaryText="About" containerElement={<Link to="/about" />}value='about' disabled={this.state.menu.about} />
+              <MenuItem primaryText="Marathon" containerElement={<Link to="/marathon" />} value='marathon' disabled={this.state.menu.marathon} />
+              <MenuItem primaryText="Gallery" containerElement={<Link to="/gallery" />} value='gallery' disabled={this.state.menu.gallery} />
+              <MenuItem primaryText="Contact" containerElement={<Link to="/contact" />} value='contact' disabled={this.state.menu.contact}/>
             </Menu>
           </div>
         </div>

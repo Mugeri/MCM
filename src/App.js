@@ -9,7 +9,7 @@ injectTapEventPlugin();
 
 const mcmTheme = getMuiTheme({
   palette: {
-    primary1Color: '#9C27B0',
+    primary1Color: '#154500',
     primary2Color: '#7B1FA2',
     primary3Color: '#B66CF8',
     accent1Color: '#4CAF50',

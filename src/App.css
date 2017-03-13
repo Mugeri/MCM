@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
 }
+
 CardText {
   color: #F3E8D2;
 }
@@ -8,6 +9,7 @@ CardText {
   text-align: center;
   min-height: 100%;
   position: relative;
+  overflow: scroll;
 }
 
 .App-logo {

@@ -1,0 +1,39 @@
+  Main: {
+    backgroundImage: 'url(' + bg + ')',
+    height: "860px",
+    backgroundSize: "100% 100%",
+    backgroundAttachment: "fixed",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  },
+  info: {
+    opacity: "0.8",
+    width: "37%",
+    height: "28%",
+    marginTop: "10%",
+    marginLeft: "4%",
+    position: "absolute",
+  },
+  h1: {
+    fontSize:'80px',
+    marginTop: '0',
+    color: "#fff",
+
+  },
+  sup: {
+    fontSize:'40px',
+     fontWeight: 'normal',
+  },
+  name: {
+    fontSize:'40px',
+    fontWeight: 'lighter',
+    lineHeight: '37px',
+    // color: "#ffef00"
+},
+chipStyle: {
+    textAlign: 'center',
+    padding: '0 20px',
+    margin: '2% auto',
+}
+
+}

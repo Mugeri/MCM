@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Card, CardText, CardTitle } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
 import bg from '../images/homebg.jpg';
 import {RaisedButton } from 'material-ui';
 
-const homeStyles = {
+const marathonStyles = {
   Main: {
     backgroundImage: 'url(' + bg + ')',
     height: "860px",
@@ -45,7 +45,7 @@ chipStyle: {
 
 }
 
-class Home extends React.Component {
+class Marathon extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,17 +56,17 @@ class Home extends React.Component {
   }
   render() {
     return (
-      <div style={homeStyles.Main}>
-        <div className="Card div" style={homeStyles.info}>
+      <div style={marathonStyles.Main}>
+        <div className="Card div" style={marathonStyles.info}>
           <Card style={{height: "100%"}}>
-            <CardTitle title={<h1 style={homeStyles.h1}>{this.state.mNumber}<sup style={homeStyles.sup}>th</sup>
-            <a style={homeStyles.name}>{this.state.mName}</a></h1>}/>
+            <CardTitle title={<h1 style={marathonStyles.h1}>{this.state.mNumber}<sup style={marathonStyles.sup}>th</sup>
+            <a style={marathonStyles.name}>{this.state.mName}</a></h1>}/>
             <CardText style={{fontSize: '24px', padding: 0}}>
               <span>Save the date</span>
               <Chip
                   backgroundColor="#fff"
                   labelStyle={{color: '#154500', fontSize: '30px'}}
-                  style={homeStyles.chipStyle}
+                  style={marathonStyles.chipStyle}
               >
                 {this.state.mDate}
             </Chip>
@@ -75,7 +75,7 @@ class Home extends React.Component {
           <div>
             <RaisedButton label="The race" primary={true} style={{margin: "12px"}}/>
 
-            <RaisedButton label="Awards"
+            <RaisedButton label="Mentorship"
             style={{margin: "12px"}}
             backgroundColor="#680001"
             />
@@ -88,4 +88,4 @@ class Home extends React.Component {
     );
   }
 }
-export default Home;
+export default Marathon;
