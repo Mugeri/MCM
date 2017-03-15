@@ -21,7 +21,7 @@ const homeStyles = {
     opacity: "0.8",
     width: "37%",
     height: "28%",
-    marginTop: "10%",
+    marginTop: "2%",
     marginLeft: "4%",
     position: "absolute",
   },

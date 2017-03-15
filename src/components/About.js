@@ -34,6 +34,7 @@ const aboutStyles = {
      fontWeight: 'normal',
   },
   content: {
+     overflow: 'scroll',
     fontSize:'24px',
     fontWeight: 'lighter',
     lineHeight: '37px',
@@ -45,7 +46,8 @@ class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mContent: 'The main objective of the event is to empower the youth to enable them make their rightful share of contribution to the society.',
+        mContent: 'Mwea Classic Marathon seeks to create awareness that connects education and economic empowerment to sports. The marathon has improved the level of education in Kirinyaga and has encouraged the youth to participate in more productive activities and shun illicit brew and criminal activities, and above all helping them identify their role models and helping them choose their careers. ',
+      mContent1: 'The main objective of the event is to empower the youth to enable them make their rightful share of contribution to the society.',
     }
   }
   componentDidMount() {
@@ -62,7 +64,7 @@ class About extends Component {
     return (
       <div style={aboutStyles.Main}>
         <div className="Card div" style={aboutStyles.info}>
-          <Card style={{height: "100%"}}>
+          <Card >
             <CardText style={aboutStyles.content}>
               {this.state.mContent}
             </CardText>

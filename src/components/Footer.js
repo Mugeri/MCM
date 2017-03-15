@@ -3,24 +3,32 @@ import { Card, CardTitle, CardText } from 'material-ui/Card';
 import {Divider} from 'material-ui';
 
 const Style = {
-  cardPadding: {
-    paddingTop: "0px",
-    paddingBottom: "0px",
-    textAlign: "left",
-  },
-  textPadding: {
-    color: "#F3E8D2",
-    paddingTop: "0px",
-    textAlign: "left"
-  }
+    cardPadding: {
+        paddingTop: "0px",
+        paddingBottom: "0px",
+        textAlign: "left",
+    },
+    textPadding: {
+        color: "#F3E8D2",
+        paddingTop: "0px",
+        textAlign: "left",
+        fontSize: "17px",
+        letterSpacing: '1px',
+    },
+    titleStyle: {
+        fontSize: "18px",
+        fontWeight: "bold"
+    }
 }
 
 export default class Footer extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      contact1: "get us at blah..blah..blah or email us at blah@blah.com",
-      contact2: "more bleh, blah, bloh, bluh",
+      contact1: "Below find Our Physical, Postal Adresses and our Office Numbers.\
+                \nPhone: \t 0720 492592\
+                ",
+      contact2: "Email:\t info@mweaclassicmarathon.co.ke",
       mission: 'Run till you die',
       vision: 'Smell the Rice',
       feature1: 'how to be a marathon freak',
@@ -33,7 +41,7 @@ export default class Footer extends React.Component{
           <Card className="FooterCard" containerStyle={{backgroundColor: "#154500"}}>
             <CardTitle
               title="Contact Us"
-              titleStyle={{fontSize: "18px"}}
+              titleStyle={Style.titleStyle}
               style={Style.cardPadding}
               />
             <CardText style={Style.textPadding} >
@@ -46,7 +54,7 @@ export default class Footer extends React.Component{
           <Card className="FooterCard" containerStyle={{backgroundColor: "#154500"}}>
             <CardTitle
             title="Mission"
-            titleStyle={{fontSize: "18px"}}
+            titleStyle={Style.titleStyle}
             style={Style.cardPadding}
             />
             <CardText style={Style.textPadding}>
@@ -56,7 +64,7 @@ export default class Footer extends React.Component{
           <Card className="FooterCard" containerStyle={{backgroundColor: "#154500"}}>
             <CardTitle
             title="Vision"
-            titleStyle={{fontSize: "18px"}}
+            titleStyle={Style.titleStyle}
             style={Style.cardPadding}
              />
             <CardText style={Style.textPadding}>
@@ -66,7 +74,7 @@ export default class Footer extends React.Component{
           <Card className="FooterCard" containerStyle={{backgroundColor: "#154500"}}>
             <CardTitle
             title="Features"
-            titleStyle={{fontSize: "18px"}}
+            titleStyle={Style.titleStyle}
             style={Style.cardPadding}
             />
             <CardText style={Style.textPadding}>
