@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import { Card, CardText, CardTitle } from 'material-ui/Card';
+import * as menuActions from '../actions/HeaderActions';
 import bg from '../images/homebg.jpg';
+import { bindActionCreators } from 'redux';
+import { Card, CardText } from 'material-ui/Card';
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import {RaisedButton } from 'material-ui';
 
 const aboutStyles = {
@@ -45,6 +48,16 @@ class About extends Component {
       mContent: 'The main objective of the event is to empower the youth to enable them make their rightful share of contribution to the society.',
     }
   }
+  componentDidMount() {
+      const menu = {
+        home: false,
+        about: true,
+        marathon: false,
+        gallery: false,
+        contact: false,
+      };
+      this.props.actions.updateMenu(menu);
+  }
   render() {
     return (
       <div style={aboutStyles.Main}>
@@ -70,4 +83,12 @@ class About extends Component {
     );
   }
 }
-export default About;
+function mapStateToProps(state) {
+    return state;
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(menuActions, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(About);

@@ -1,8 +1,12 @@
-import Home from './Home.js';
-import {combineReducers} from 'redux';
+import home from './HomeReducers';
+import about from './AboutReducers';
+import header from './HeaderReducers';
+import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  Home
+  home,
+  about,
+  header,
 });
 
 export default rootReducer;

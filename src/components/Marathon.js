@@ -1,3 +1,6 @@
+import * as menuActions from '../actions/HeaderActions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { Card, CardText, CardTitle } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
@@ -54,6 +57,16 @@ class Marathon extends Component {
       mDate: '22/07/17',
     }
   }
+  componentDidMount() {
+      const menu = {
+        home: false,
+        about: false,
+        marathon: true,
+        gallery: false,
+        contact: false,
+      };
+      this.props.actions.updateMenu(menu);
+  }
   render() {
     return (
       <div style={marathonStyles.Main}>
@@ -88,4 +101,12 @@ class Marathon extends Component {
     );
   }
 }
-export default Marathon;
+function mapStateToProps(state) {
+    return state;
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(menuActions, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Marathon);

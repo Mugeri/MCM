@@ -1,8 +1,12 @@
-import React from 'react';
+import bg from '../images/homebg.jpg';
+import { bindActionCreators } from 'redux';
 import { Card, CardText, CardTitle } from 'material-ui/Card';
 import Chip from 'material-ui/Chip';
-import bg from '../images/homebg.jpg';
+import { connect } from 'react-redux';
+import * as menuActions from '../actions/HeaderActions';
 import {RaisedButton } from 'material-ui';
+import React from 'react';
+
 
 const homeStyles = {
   Main: {
@@ -54,6 +58,16 @@ class Home extends React.Component {
       mDate: '22/07/17',
     }
   }
+  componentDidMount() {
+      const menu = {
+        home: true,
+        about: false,
+        marathon: false,
+        gallery: false,
+        contact: false,
+      };
+      this.props.actions.updateMenu(menu);
+  }
   render() {
     return (
       <div style={homeStyles.Main}>
@@ -88,4 +102,12 @@ class Home extends React.Component {
     );
   }
 }
-export default Home;
+function mapStateToProps(state) {
+    return state;
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(menuActions, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

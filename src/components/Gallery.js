@@ -1,4 +1,7 @@
-import React from 'react';
+import * as menuActions from '../actions/HeaderActions';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
@@ -65,22 +68,44 @@ const tilesData = [
 /**
  * This example demonstrates the horizontal scrollable single-line grid list of images.
  */
-const Gallery = () => (
-  <div style={styles.root}>
-    <GridList style={styles.gridList} cols={2.2}>
-      {tilesData.map((tile) => (
-        <GridTile
-          key={tile.img}
-          title={tile.title}
-          actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
-          titleStyle={styles.titleStyle}
-          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-        >
-          <img src={tile.img} alt='gallery'/>
-        </GridTile>
-      ))}
-    </GridList>
-  </div>
-);
+class Gallery extends Component {
+    componentDidMount() {
+        const menu = {
+          home: false,
+          about: false,
+          marathon: false,
+          gallery: true,
+          contact: false,
+        };
+        this.props.actions.updateMenu(menu);
+    }
+    render() {
+        return (
+          <div style={styles.root}>
+            <GridList style={styles.gridList} cols={2.2}>
+              {tilesData.map((tile) => (
+                <GridTile
+                  key={tile.img}
+                  title={tile.title}
+                  actionIcon={<IconButton><StarBorder color="rgb(0, 188, 212)" /></IconButton>}
+                  titleStyle={styles.titleStyle}
+                  titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+                >
+                  <img src={tile.img} alt='gallery'/>
+                </GridTile>
+              ))}
+            </GridList>
+          </div>
+      );
+    }
+}
+function mapStateToProps(state) {
+    return state;
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(menuActions, dispatch)
+    }
+}
 
-export default Gallery;
+export default connect(mapStateToProps, mapDispatchToProps)(Gallery);

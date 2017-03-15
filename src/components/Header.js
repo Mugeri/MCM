@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import logo_6 from '../images/logo_6.png';
 import facebook from '../images/facebook-16.ico';
@@ -14,20 +15,10 @@ const headerStyles = {
   }
 }
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menu: {
-        home: true,
-        about: false,
-        marathon: false,
-        gallery: false,
-        contact: false,
-      },
-    }
-  }
+export class Header extends React.Component {
+
   render() {
+      console.log('The props are: ', this.props);
     return (
       <div className="Header">
         <div className="App-header">
@@ -37,11 +28,36 @@ export default class Header extends React.Component {
             <Menu className="Menu"
               style={{padding: "0px 10px"}}
             >
-              <MenuItem primaryText="Home" containerElement={<Link to="/" />} value='home' disabled={this.state.menu.home} />
-              <MenuItem primaryText="About" containerElement={<Link to="/about" />}value='about' disabled={this.state.menu.about} />
-              <MenuItem primaryText="Marathon" containerElement={<Link to="/marathon" />} value='marathon' disabled={this.state.menu.marathon} />
-              <MenuItem primaryText="Gallery" containerElement={<Link to="/gallery" />} value='gallery' disabled={this.state.menu.gallery} />
-              <MenuItem primaryText="Contact" containerElement={<Link to="/contact" />} value='contact' disabled={this.state.menu.contact}/>
+              <MenuItem
+                primaryText="Home"
+                containerElement={<Link to="/" />}
+                value='home'
+                disabled={this.props.home}
+                />
+              <MenuItem
+                primaryText="About"
+                containerElement={<Link to="/about" />}
+                value='about'
+                disabled={this.props.about}
+                />
+              <MenuItem
+                primaryText="Marathon"
+                containerElement={<Link to="/marathon" />}
+                value='marathon'
+                disabled={this.props.marathon}
+                />
+              <MenuItem
+                  primaryText="Gallery"
+                  containerElement={<Link to="/gallery" />}
+                  value='gallery'
+                  disabled={this.props.gallery}
+                />
+              <MenuItem
+                primaryText="Contact"
+                containerElement={<Link to="/contact" />}
+                value='contact'
+                disabled={this.props.contact}
+                />
             </Menu>
           </div>
         </div>
@@ -53,3 +69,15 @@ export default class Header extends React.Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    home: state.header.home,
+    about: state.header.about,
+    marathon: state.header.marathon,
+    gallery: state.header.gallery,
+    contact: state.header.contact,
+  };
+}
+
+export default connect(mapStateToProps)(Header);
